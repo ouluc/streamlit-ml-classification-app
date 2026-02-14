@@ -1,5 +1,4 @@
-def preprocess_test_data(df):
-    """
-    Placeholder for preprocessing uploaded test data
-    """
-    return df
+def preprocess_data(df):
+    X = df.iloc[:, :-1]
+    y = df.iloc[:, -1]
+    return X, y

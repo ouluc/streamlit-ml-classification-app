@@ -1,2 +1,4 @@
+import joblib
+
 def load_model():
-    pass
+    return joblib.load("saved_models/random_forest.pkl")

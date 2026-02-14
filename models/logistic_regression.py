@@ -1,5 +1,4 @@
+import joblib
+
 def load_model():
-    """
-    Placeholder for loading Logistic Regression model
-    """
-    pass
+    return joblib.load("saved_models/logistic_regression.pkl")
