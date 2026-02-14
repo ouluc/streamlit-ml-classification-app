@@ -18,7 +18,7 @@ st.title("ML Classification Model Evaluation")
 # ---------------------------------------------------
 # Step 1: Dataset Upload
 # ---------------------------------------------------
-st.header("Upload Test Dataset")
+st.header("Step 1/2: Upload Test Dataset")
 
 uploaded_file = st.file_uploader(
     "Upload CSV file (Test data only)",
@@ -37,7 +37,7 @@ st.dataframe(data.head())
 # ---------------------------------------------------
 # Step 2: Model Selection (Auto from models folder)
 # ---------------------------------------------------
-st.header("Select Machine Learning Model")
+st.header("Step 2/2: Select Machine Learning Model")
 
 MODELS_DIR = "models"
 
