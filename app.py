@@ -3,6 +3,7 @@ import pandas as pd
 import os
 import importlib
 import matplotlib.pyplot as plt
+import seaborn as sns
 from sklearn.metrics import confusion_matrix, classification_report
 
 from utils.preprocessing import preprocess_data
