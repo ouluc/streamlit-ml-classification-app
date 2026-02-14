@@ -97,9 +97,7 @@ selected_model_name = st.selectbox(
 # Load Model
 # ---------------------------------------------------
 model_module = importlib.import_module(f"models.{selected_model_name}")
-
 model = model_module.load_model()
-y_pred = model.predict(X_test)
 
 # ---------------------------------------------------
 # Preprocess & Predict
