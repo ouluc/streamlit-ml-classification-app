@@ -1,4 +1,6 @@
 import joblib
 
 def load_model():
-    return joblib.load("saved_models/Knn.pkl")
+    model = joblib.load("saved_models/knn.pkl")
+    scaler = joblib.load("saved_models/knn_scaler.pkl")
+    return model, scaler

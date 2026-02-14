@@ -97,7 +97,14 @@ selected_model_name = st.selectbox(
 # Load Model
 # ---------------------------------------------------
 model_module = importlib.import_module(f"models.{selected_model_name}")
-model = model_module.load_model()
+#model = model_module.load_model()
+loaded = model_module.load_model()
+
+if isinstance(loaded, tuple):
+    model, scaler = loaded
+    X_test = scaler.transform(X_test)
+else:
+    model = loaded
 
 # ---------------------------------------------------
 # Preprocess & Predict
