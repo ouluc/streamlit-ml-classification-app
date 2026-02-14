@@ -98,4 +98,13 @@ st.subheader("Confusion Matrix")
 plot_confusion_matrix(cm)
 
 st.subheader("Classification Report")
-st.text(classification_report(y_test, y_pred))
+report_dict = classification_report(
+    y_test,
+    y_pred,
+    output_dict=True
+)
+
+df_report = pd.DataFrame(report_dict).transpose()
+df_report = df_report.round(3)
+
+st.dataframe(df_report, use_container_width=True)
