@@ -44,14 +44,14 @@ st.markdown(
 # App Header
 # ---------------------------------------------------
 st.title("ML Classification Model Evaluation")
-st.caption("Upload test data, select a trained model, and evaluate performance")
+st.caption("Upload test data, Select a trained model, and Evaluate performance")
 
 st.markdown("---")
 
 # ---------------------------------------------------
 # STEP 1: Dataset Upload
 # ---------------------------------------------------
-st.markdown('<div class="card">', unsafe_allow_html=True)
+#st.markdown('<div class="card">', unsafe_allow_html=True)
 st.markdown('<div class="section-title">Step 1/1: Upload Test Dataset</div>', unsafe_allow_html=True)
 
 uploaded_file = st.file_uploader(
@@ -74,7 +74,8 @@ st.markdown('</div>', unsafe_allow_html=True)
 # ---------------------------------------------------
 # STEP 2: Model Selection
 # ---------------------------------------------------
-st.markdown('<div class="card">', unsafe_allow_html=True)
+#st.markdown('<div class="card">', unsafe_allow_html=True)
+st.markdown("---")
 st.markdown('<div class="section-title">Step 2/2: Select Classification Model</div>', unsafe_allow_html=True)
 
 MODELS_DIR = "models"
@@ -90,7 +91,7 @@ selected_model_name = st.selectbox(
     model_files
 )
 
-st.markdown('</div>', unsafe_allow_html=True)
+#st.markdown('</div>', unsafe_allow_html=True)
 
 # ---------------------------------------------------
 # Load Model
@@ -109,7 +110,8 @@ y_pred = model.predict(X_test)
 # ---------------------------------------------------
 metrics = calculate_metrics(y_test, y_pred, model, X_test)
 
-st.markdown('<div class="card">', unsafe_allow_html=True)
+st.markdown("---")
+#st.markdown('<div class="card">', unsafe_allow_html=True)
 st.markdown('<div class="section-title">Model Evaluation Metrics</div>', unsafe_allow_html=True)
 
 m1, m2, m3 = st.columns(3)
@@ -123,12 +125,13 @@ m2.metric("F1 Score", f"{metrics['f1']:.4f}")
 m3.metric("AUC Score", f"{metrics['auc']:.4f}")
 m3.metric("MCC Score", f"{metrics['mcc']:.4f}")
 
-st.markdown('</div>', unsafe_allow_html=True)
+#st.markdown('</div>', unsafe_allow_html=True)
 
 # ---------------------------------------------------
 # Performance Analysis
 # ---------------------------------------------------
-st.markdown('<div class="card">', unsafe_allow_html=True)
+st.markdown("---")
+#st.markdown('<div class="card">', unsafe_allow_html=True)
 st.markdown('<div class="section-title">Model Performance Analysis</div>', unsafe_allow_html=True)
 
 left, right = st.columns([1, 1.2])
@@ -169,4 +172,4 @@ with right:
     df_report = pd.DataFrame(report_dict).transpose().round(3)
     st.dataframe(df_report, use_container_width=True)
 
-st.markdown('</div>', unsafe_allow_html=True)
+#st.markdown('</div>', unsafe_allow_html=True)
