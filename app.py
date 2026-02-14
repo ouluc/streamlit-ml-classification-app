@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import os
 import importlib
+import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix, classification_report
 
 from utils.preprocessing import preprocess_data
@@ -95,12 +96,15 @@ st.header("Model Performance Analysis")
 cm = confusion_matrix(y_test, y_pred)
 
 st.subheader("Confusion Matrix")
+labels = ["Bad", "Good"]
 fig, ax = plt.subplots(figsize=(4, 3))
 sns.heatmap(
     cm,
     annot=True,
     fmt="d",
     cmap="Blues",
+    xticklabels=labels,
+    yticklabels=labels,
     cbar=False,
     ax=ax
 )
@@ -108,6 +112,7 @@ sns.heatmap(
 ax.set_xlabel("Predicted Label")
 ax.set_ylabel("True Label")
 
+plt.tight_layout()
 st.pyplot(fig)
 
 st.subheader("Classification Report")
