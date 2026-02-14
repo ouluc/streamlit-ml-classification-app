@@ -75,6 +75,16 @@ st.markdown('</div>', unsafe_allow_html=True)
 # STEP 2: Model Selection
 # ---------------------------------------------------
 #st.markdown('<div class="card">', unsafe_allow_html=True)
+
+MODEL_REGISTRY = {
+    "Logistic Regression": "logistic_regression",
+    "Decision Tree Classifier": "decision_tree",
+    "K-Nearest Neighbor Classifier": "knn",
+    "Naive Bayes Classifier (Gaussian)": "naive_bayes",
+    "Ensemble Model - Random Forest": "random_forest",
+    "Ensemble Model - XGBoost": "xgboost_model"
+}
+
 st.markdown("---")
 st.markdown('<div class="section-title">Step 2/2: Select Classification Model</div>', unsafe_allow_html=True)
 
@@ -86,10 +96,11 @@ model_files = [
     if f.endswith(".py") and f != "__init__.py"
 ]
 
-selected_model_name = st.selectbox(
-    "Choose a trained model",
-    model_files
+selected_model_label = st.selectbox(
+    "Choose a classification model",
+    list(MODEL_REGISTRY.keys())
 )
+selected_model_name = MODEL_REGISTRY[selected_model_label]
 
 #st.markdown('</div>', unsafe_allow_html=True)
 
