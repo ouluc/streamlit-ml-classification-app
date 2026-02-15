@@ -1,10 +1,24 @@
 # Streamlit Machine Learning Classification App
 
 This project demonstrates a Streamlit-based web application for evaluating multiple machine learning classification models.
-**Problem Statement:** Binary classification for quality of red wine. Quality score >= 6 is considered as good wine (i.e positive class '1'). Else not so good wine (i.e., negative class '0').
-**Dataset:** UCI “Wine Quality – Red Wine” dataset
-**Feature Size:** 12 (11 + 1 target)
-**Instance Size:** 1599 samples
+
+## Problem Statement
+
+- **Objective**: Binary classification for predicting the quality of red wine.
+- **Positive Class (1)**: Wine with quality score **≥ 6** (Good Quality Wine).
+- **Negative Class (0)**: Wine with quality score **< 6** (Not So Good Quality Wine).
+
+---
+
+## Dataset Details
+
+- **Dataset Name**: UCI *Wine Quality – Red Wine* Dataset
+- **Source**: UCI Machine Learning Repository
+- **Total Instances**: 1,599 samples
+- **Feature Size**: 12  
+  - **Input Features**: 11  
+  - **Target Variable**: 1 (Binary quality label)
+
 **Models Used:** Below six classification models are implemented:
 1. Logistic Regression 
 2. Decision Tree Classifier 
