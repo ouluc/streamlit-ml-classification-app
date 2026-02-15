@@ -53,6 +53,9 @@ st.markdown("---")
 # ---------------------------------------------------
 #st.markdown('<div class="card">', unsafe_allow_html=True)
 st.markdown('<div class="section-title">Step 1/1: Upload Test Dataset</div>', unsafe_allow_html=True)
+st.subheader("Download Test Dataset")
+test_data_url = ("https://raw.githubusercontent.com/ouluc/streamlit-ml-classification-app/main/sample_data/test_data_sample.csv")
+st.markdown(f"[Click here to download test data] ({test_data_url})",unsafe_allow_html=True)
 
 uploaded_file = st.file_uploader(
     "Upload CSV file (test data only)",
